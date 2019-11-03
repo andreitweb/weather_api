@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Weather App",
+  "name": "Practice JS REST API. Weatherbit REST API.",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Components
+import Form from "./components/Form";
+
+const APIKey = '7b9cd48c135743519b7158ef910b185d';
+const APIPath = 'http://api.weatherbit.io/v2.0/';
+
+class WeatherApp extends React.PureComponent{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      lang: 'ru',
+      units: 'M', // Metrics (Celcius)
+      days: '16', // Forecast days
+      city: '',
+      country: '',
+      data: [],
+    }
+  }
+
+  render() {
+    return  (
+      <div className='weather'>
+        <div className='weather__header'>
+          <div className='weather__form'>
+            <Form/>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default WeatherApp;
